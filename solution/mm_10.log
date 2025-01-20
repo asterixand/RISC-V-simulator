@@ -1,0 +1,79 @@
+../tests/mm_10
+0x80000000: lui    sp, 0x80f10000
+0x80000004: addi   sp, sp, -16
+0x80000008: sw     ra, 12(sp)
+0x8000000c: sw     s0, 8(sp)
+0x80000010: addi   s0, sp, 16
+0x80000014: addi   sp, sp, -400
+0x80000018: addi   a0, sp, 0
+0x8000001c: addi   sp, sp, -400
+0x80000020: addi   t4, sp, 0
+0x80000024: addi   sp, sp, -400
+0x80000028: addi   t5, sp, 0
+0x8000002c: addi   a1, zero, 10
+0x80000030: addi   t1, zero, 0
+0x80000034: addi   a7, zero, 0
+0x80000038: addi   t3, a1, 0
+0x8000003c: addi   a6, a7, 0
+0x80000040: addi   a5, t1, 0
+0x80000044: addi   a4, a7, 0
+0x80000048: addi   a3, zero, 0
+0x8000004c: add    a2, a0, a5
+0x80000050: sw     a3, 0(a2)
+0x80000054: add    a2, t4, a5
+0x80000058: sw     a4, 0(a2)
+0x8000005c: add    a2, t5, a5
+0x80000060: sw     zero, 0(a2)
+0x80000064: add    a3, a3, a6
+0x80000068: addi   a4, a4, 1
+0x8000006c: addi   a5, a5, 4
+0x80000070: bne    a4, a1, 0x8000004c
+0x80000074: addi   a7, a7, 1
+0x80000078: addi   t1, t1, 40
+0x8000007c: addi   a1, a1, 1
+0x80000080: bne    a7, t3, 0x8000003c
+0x80000084: addi   t1, a0, 0
+0x80000088: addi   t0, t5, 0
+0x8000008c: addi   t3, a0, 400
+0x80000090: addi   t6, t4, 440
+0x80000094: addi   a0, t4, 400
+0x80000098: addi   a6, t0, 0
+0x8000009c: addi   a7, a6, 0
+0x800000a0: lw     a2, 0(a6)
+0x800000a4: addi   a5, a0, -400
+0x800000a8: addi   a3, t1, 0
+0x800000ac: lw     a4, 0(a3)
+0x800000b0: lw     a1, 0(a5)
+0x800000b4: mul    a4, a4, a1
+0x800000b8: add    a2, a2, a4
+0x800000bc: addi   a3, a3, 4
+0x800000c0: addi   a5, a5, 40
+0x800000c4: bne    a5, a0, 0x800000ac
+0x800000c8: sw     a2, 0(a7)
+0x800000cc: addi   a6, a6, 4
+0x800000d0: addi   a0, a0, 4
+0x800000d4: bne    a0, t6, 0x8000009c
+0x800000d8: addi   t1, t1, 40
+0x800000dc: addi   t0, t0, 40
+0x800000e0: bne    t1, t3, 0x80000094
+0x800000e4: lw     a0, 396(t5)
+0x800000e8: addi   sp, s0, -16
+0x800000ec: lw     ra, 12(sp)
+0x800000f0: lw     s0, 8(sp)
+0x800000f4: addi   sp, sp, 16
+0x800000f8: ebreak
+[ebreak] Stop Simulation
+Simulation Finished
+-------------
+zero ($0): 0x00000000    ra ($1):   0x00000000    sp ($2):   0x80f10000    gp ($3):   0x00000000    
+tp ($4):   0x00000000    t0 ($5):   0x80f0fcd0    t1 ($6):   0x80f0fff0    t2 ($7):   0x00000000    
+s0 ($8):   0x00000000    s1 ($9):   0x00000000    a0 ($10):  0x00001842    a1 ($11):  0x00000012    
+a2 ($12):  0x00001842    a3 ($13):  0x80f0fff0    a4 ($14):  0x000005b2    a5 ($15):  0x80f0fe84    
+a6 ($16):  0x80f0fcd0    a7 ($17):  0x80f0fccc    s2 ($18):  0x00000000    s3 ($19):  0x00000000    
+s4 ($20):  0x00000000    s5 ($21):  0x00000000    s6 ($22):  0x00000000    s7 ($23):  0x00000000    
+s8 ($24):  0x00000000    s9 ($25):  0x00000000    s10 ($26): 0x00000000    s11 ($27): 0x00000000    
+t3 ($28):  0x80f0fff0    t4 ($29):  0x80f0fcd0    t5 ($30):  0x80f0fb40    t6 ($31):  0x80f0fe88    
+8955 instructions executed in 8955 cycles. CPI = 1.000
+Data transfer:    2505 instructions (27.97%)
+ALU operation:    5229 instructions (58.39%)
+Control transfer: 1221 instructions (13.63%)

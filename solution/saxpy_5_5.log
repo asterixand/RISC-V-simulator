@@ -1,0 +1,58 @@
+../tests/saxpy_5_5
+0x80000000: lui    sp, 0x80f10000
+0x80000004: addi   sp, sp, -64
+0x80000008: sw     ra, 60(sp)
+0x8000000c: addi   a5, zero, -10
+0x80000010: sw     a5, 28(sp)
+0x80000014: addi   a5, zero, 7
+0x80000018: sw     a5, 8(sp)
+0x8000001c: addi   a4, zero, -8
+0x80000020: sw     a4, 32(sp)
+0x80000024: sw     a5, 12(sp)
+0x80000028: addi   a4, zero, -6
+0x8000002c: sw     a4, 36(sp)
+0x80000030: sw     a5, 16(sp)
+0x80000034: addi   a4, zero, -4
+0x80000038: sw     a4, 40(sp)
+0x8000003c: sw     a5, 20(sp)
+0x80000040: addi   a4, zero, -2
+0x80000044: sw     a4, 44(sp)
+0x80000048: sw     a5, 24(sp)
+0x8000004c: addi   a2, sp, 8
+0x80000050: addi   a1, sp, 28
+0x80000054: addi   a0, zero, 2
+0x80000058: jal    ra, 0x8000007c
+0x8000005c: lw     a5, 8(sp)
+0x80000060: lw     a4, 12(sp)
+0x80000064: add    a5, a5, a4
+0x80000068: lw     a0, 20(sp)
+0x8000006c: add    a0, a5, a0
+0x80000070: lw     ra, 60(sp)
+0x80000074: addi   sp, sp, 64
+0x80000078: ebreak
+0x8000007c: addi   a5, a2, 0
+0x80000080: addi   a2, a2, 20
+0x80000084: lw     a3, 0(a1)
+0x80000088: mul    a3, a0, a3
+0x8000008c: lw     a4, 0(a5)
+0x80000090: add    a4, a4, a3
+0x80000094: sw     a4, 0(a5)
+0x80000098: addi   a1, a1, 4
+0x8000009c: addi   a5, a5, 4
+0x800000a0: bne    a5, a2, 0x80000084
+0x800000a4: jalr   zero, ra, 0
+[ebreak] Stop Simulation
+Simulation Finished
+-------------
+zero ($0): 0x00000000    ra ($1):   0x00000000    sp ($2):   0x80f10000    gp ($3):   0x00000000    
+tp ($4):   0x00000000    t0 ($5):   0x00000000    t1 ($6):   0x00000000    t2 ($7):   0x00000000    
+s0 ($8):   0x00000000    s1 ($9):   0x00000000    a0 ($10):  0xffffffe9    a1 ($11):  0x80f0fff0    
+a2 ($12):  0x80f0ffdc    a3 ($13):  0xfffffffc    a4 ($14):  0xfffffff7    a5 ($15):  0xffffffea    
+a6 ($16):  0x00000000    a7 ($17):  0x00000000    s2 ($18):  0x00000000    s3 ($19):  0x00000000    
+s4 ($20):  0x00000000    s5 ($21):  0x00000000    s6 ($22):  0x00000000    s7 ($23):  0x00000000    
+s8 ($24):  0x00000000    s9 ($25):  0x00000000    s10 ($26): 0x00000000    s11 ($27): 0x00000000    
+t3 ($28):  0x00000000    t4 ($29):  0x00000000    t5 ($30):  0x00000000    t6 ($31):  0x00000000    
+74 instructions executed in 74 cycles. CPI = 1.000
+Data transfer:    30 instructions (40.54%)
+ALU operation:    36 instructions (48.65%)
+Control transfer: 8 instructions (10.81%)
