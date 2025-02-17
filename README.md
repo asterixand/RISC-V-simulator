@@ -11,7 +11,7 @@ The simulator includes the following components:
 
 The project is designed to provide a working understanding of how RISC-V processors operate at a low level, from instruction decoding to execution. The codebase is modular, making it easy to extend and experiment with various aspects of the RISC-V architecture.
 
-1.1	Simple Cache-Memory Simulator:
+1.1	Cache-Memory Simulator:
 - i.	The determine_miss_penalty method calculates the latency penalty associated with accessing a specific memory address based on whether it results in a row buffer hit or a row buffer miss. 
 - ii.	A row buffer hit happens when the requested memory data is already loaded into cache and when occurs, there’s an additional delay since the data must be fetched from a lower (slower) memory hierarchy (like main memory). When there’s a row buffer hit, it directly improves performance as he the data access is faster with minimal latency and a row buffer miss slows down the overall performance leading to higher miss penalties.
 
